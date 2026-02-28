@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ບົດລວບລວມຄຳຄິດເຫັນຈາກຜູ້ເຂົ້າຮ່ວມ (Workshop Feedback)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+fontFamily: {
+sans: ['"Noto Sans Lao"', 'sans-serif'],
+},
+colors: {
+primary: '#10B981',
+primaryDark: '#059669',
+secondary: '#F59E0B',
+secondaryDark: '#D97706',
+surface: '#FFFFFF',
+background: '#F8FAFC',
+textMain: '#1E293B',
+textMuted: '#64748B'
+}
+}
+}
+}
+</script>
+<style>
+.chart-container {
+position: relative;
+width: 100%;
+max-width: 800px;
+margin-left: auto;
+margin-right: auto;
+height: 350px;
+max-height: 400px;
+}
+@media (min-width: 768px) {
+.chart-container {
+height: 400px;
+}
+}
+.chart-container-small {
+position: relative;
+width: 100%;
+max-width: 400px;
+margin-left: auto;
+margin-right: auto;
+height: 300px;
+max-height: 350px;
+}
+</style>
+</head>
+<body class="bg-background text-textMain font-sans antialiased p-4 md:p-8">
+
+<!-- Palette Used: Vibrant Growth & Caution (Emerald & Amber) -->
+<!-- NO SVG OR MERMAID JS WERE USED IN THIS OUTPUT -->
+<!-- PLAN SUMMARY: 
+Section 1: Overview - Compares total Expectations vs Concerns using a Donut Chart. 
+Section 2: Expectations Deep Dive - Analyzes specific expectation categories using a Bar Chart. 
+Section 3: Concerns Deep Dive - Analyzes specific concern categories using a Horizontal Bar Chart.
+VISUALIZATION CHOICES:
+1. Total Comparison -> Compare -> Donut Chart -> Simple proportion, clear contrast. (Chart.js, NO SVG)
+2. Expectation Categories -> Compare -> Bar Chart -> Compare multiple categorical values effectively. (Chart.js, NO SVG)
+3. Concern Categories -> Compare -> Horizontal Bar Chart -> Compare categorical values with longer Lao text labels. (Chart.js, NO SVG) -->
+
+<div class="max-w-7xl mx-auto space-y-8">
+
+<header class="text-center bg-surface p-8 rounded-2xl shadow-sm border border-slate-100">
+<h1 class="text-3xl md:text-5xl font-bold text-textMain mb-4">📊 ບົດລວບລວມຄຳຄິດເຫັນຈາກຜູ້ເຂົ້າຮ່ວມ</h1>
+<p class="text-lg md:text-xl text-textMuted max-w-3xl mx-auto">
+ບົດສະຫຼຸບຂໍ້ມູນການສຳຫຼວດກ່ອນການຝຶກອົບຮົມ (Workshop Feedback) ໂດຍແບ່ງອອກເປັນ 2 ພາກສ່ວນຫຼັກຄື: ສິ່ງທີ່ຄາດຫວັງຢາກໄດ້ຮັບ ແລະ ສິ່ງທີ່ເປັນຄວາມກັງວົນໃຈ.
+</p>
+</header>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl p-6 text-white shadow-lg flex items-center justify-between transform transition hover:scale-[1.02]">
+<div>
+<h2 class="text-xl font-semibold opacity-90 mb-1">🟢 ຄວາມຄາດຫວັງທັງໝົດ</h2>
+<p class="text-sm opacity-80">ຈຳນວນຄຳຄິດເຫັນ (ສະຕິກເກີສີຂຽວ)</p>
+</div>
+<div class="text-6xl font-bold">37</div>
+</div>
+<div class="bg-gradient-to-br from-amber-400 to-amber-600 rounded-2xl p-6 text-white shadow-lg flex items-center justify-between transform transition hover:scale-[1.02]">
+<div>
+<h2 class="text-xl font-semibold opacity-90 mb-1">🟡 ຄວາມກັງວົນທັງໝົດ</h2>
+<p class="text-sm opacity-80">ຈຳນວນຄຳຄິດເຫັນ (ສະຕິກເກີສີເຫຼືອງ)</p>
+</div>
+<div class="text-6xl font-bold">40</div>
+</div>
+</div>
+
+<div class="bg-surface rounded-2xl shadow-sm p-6 md:p-8 border border-slate-100">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+<div class="lg:col-span-1 space-y-4">
+<h2 class="text-2xl font-bold text-textMain border-b-2 border-emerald-500 pb-2 inline-block">ພາບລວມຄວາມຄິດເຫັນ</h2>
+<p class="text-textMuted leading-relaxed">
+ຈາກການເກັບກຳຂໍ້ມູນ, ເຫັນໄດ້ວ່າຜູ້ເຂົ້າຮ່ວມມີສັດສ່ວນຂອງ <strong>ຄວາມກັງວົນ (52%)</strong> ຫຼາຍກວ່າ <strong>ຄວາມຄາດຫວັງ (48%)</strong> ເລັກນ້ອຍ.
+</p>
+<p class="text-textMuted leading-relaxed">
+ນີ້ສະແດງໃຫ້ເຫັນວ່າຜູ້ເຂົ້າຮ່ວມມີຄວາມກະຕືລືລົ້ນຢາກຮຽນຮູ້ສິ່ງໃໝ່ໆ ແຕ່ໃນຂະນະດຽວກັນກໍມີຄວາມກັງວົນກ່ຽວກັບພື້ນຖານຂອງຕົນເອງ ແລະ ຄວາມສາມາດໃນການນຳໄປໃຊ້ແທ້ ເຊິ່ງເປັນຈຸດສຳຄັນທີ່ວິທະຍາກອນຕ້ອງນຳໄປປັບປຸງວິທີການສອນ.
+</p>
+<ul class="space-y-2 mt-4">
+<li class="flex items-center text-emerald-600 font-semibold"><span class="mr-2">📈</span> ພ້ອມທີ່ຈະພັດທະນາຕົນເອງ</li>
+<li class="flex items-center text-amber-600 font-semibold"><span class="mr-2">⚠️</span> ຕ້ອງການການສະໜັບສະໜູນພື້ນຖານ</li>
+</ul>
+</div>
+<div class="lg:col-span-2">
+<div class="chart-container-small">
+<canvas id="overviewChart"></canvas>
+</div>
+</div>
+</div>
+</div>
+
+<div class="bg-surface rounded-2xl shadow-sm p-6 md:p-8 border border-slate-100">
+<div class="mb-6">
+<h2 class="text-2xl font-bold text-textMain border-b-2 border-emerald-500 pb-2 inline-block">🟢 ວິເຄາະ: ຄວາມຄາດຫວັງ (Expectations)</h2>
+<p class="text-textMuted mt-3 max-w-4xl">
+ເມື່ອເຈາະເລິກລົງໃນໝວດໝູ່ຂອງຄວາມຄາດຫວັງ, ເຫັນໄດ້ຢ່າງຊັດເຈນວ່າຈຸດປະສົງຫຼັກຂອງຜູ້ເຂົ້າຮ່ວມແມ່ນ <strong>"ການນຳໄປໃຊ້ໃນວຽກງານຕົວຈິງ"</strong>. ພວກເຂົາຕ້ອງການໃຫ້ການຝຶກອົບຮົມຄັ້ງນີ້ຊ່ວຍແກ້ໄຂບັນຫາ, ຫຼຸດຜ່ອນຂັ້ນຕອນທີ່ຊ້ຳຊ້ອນ ແລະ ສາມາດສ້າງ Dashboard ທີ່ເປັນປະໂຫຍດໄດ້ແທ້.
+</p>
+</div>
+<div class="chart-container">
+<canvas id="expectationsChart"></canvas>
+</div>
+</div>
+
+<div class="bg-surface rounded-2xl shadow-sm p-6 md:p-8 border border-slate-100">
+<div class="mb-6">
+<h2 class="text-2xl font-bold text-textMain border-b-2 border-amber-500 pb-2 inline-block">🟡 ວິເຄາະ: ຄວາມກັງວົນ (Concerns)</h2>
+<p class="text-textMuted mt-3 max-w-4xl">
+ສຳລັບຄວາມກັງວົນ, ສອງອັນດັບທຳອິດທີ່ໂດດເດັ່ນທີ່ສຸດແມ່ນ <strong>"ຄວາມເຂົ້າໃຈ ແລະ ພື້ນຖານຄວາມຮູ້"</strong> ຕິດພັນກັບ <strong>"ການນຳໄປໃຊ້ ແລະ ຄວາມສອດຄ່ອງກັບວຽກ"</strong>. ຜູ້ເຂົ້າຮ່ວມຢ້ານວ່າຈະຕາມບໍ່ທັນເນື່ອງຈາກພື້ນຖານອ່ອນ ແລະ ຢ້ານວ່າເນື້ອຫາຈະບໍ່ກົງກັບໜ້າວຽກທີ່ຕົນເອງຮັບຜິດຊອບ ເຊິ່ງອາດເຮັດໃຫ້ຮຽນໄປແລ້ວລືມ. ນອກຈາກນີ້ຍັງມີຄວາມກັງວົນເລື່ອງອຸປະກອນ ແລະ ສັນຍານອິນເຕີເນັດ.
+</p>
+</div>
+<div class="chart-container">
+<canvas id="concernsChart"></canvas>
+</div>
+</div>
+
+<div class="bg-surface rounded-2xl shadow-sm p-6 md:p-8 border border-slate-100">
+<div class="mb-6">
+<h2 class="text-2xl font-bold text-textMain border-b-2 border-slate-300 pb-2 inline-block">📎 ເອກະສານຊ້ອນທ້າຍ: ຮູບພາບການເກັບກຳຂໍ້ມູນ</h2>
+<p class="text-textMuted mt-3">ພາບຕົ້ນສະບັບການຕິດສະຕິກເກີສະແດງຄວາມຄິດເຫັນຂອງຜູ້ເຂົ້າຮ່ວມ (ຄວາມຄາດຫວັງ ແລະ ຄວາມກັງວົນ).</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 flex items-center justify-center">
+<img src="expect.jpg" alt="ຮູບພາບສະຕິກເກີຄວາມຄາດຫວັງ (ສີຂຽວ)" class="w-full h-auto max-h-[600px] object-contain hover:scale-105 transition-transform duration-300">
+</div>
+<div class="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 flex items-center justify-center">
+<img src="concern.jpeg" alt="ຮູບພາບສະຕິກເກີຄວາມກັງວົນ (ສີເຫຼືອງ)" class="w-full h-auto max-h-[600px] object-contain hover:scale-105 transition-transform duration-300">
+</div>
+</div>
+</div>
+
+<footer class="text-center text-textMuted text-sm py-6">
+<p>ສ້າງຂຶ້ນເພື່ອສະຫຼຸບຜົນການສຳຫຼວດກ່ອນການຝຶກອົບຮົມ (Workshop Pre-Assessment Dashboard).</p>
+</footer>
+
+</div>
+
+<script>
+const tooltipConfig = {
+tooltip: {
+callbacks: {
+title: function(tooltipItems) {
+const item = tooltipItems[0];
+let label = item.chart.data.labels[item.dataIndex];
+if (Array.isArray(label)) {
+return label.join(' ');
+} else {
+return label;
+}
+}
+}
+}
+};
+
+function wrapLabel(label) {
+if (label.length <= 16) return [label];
+const words = label.split(' ');
+if (words.length === 1) {
+return [label.substring(0, 16) + '-', label.substring(16)];
+}
+let lines = [];
+let currentLine = '';
+words.forEach(word => {
+if ((currentLine + word).length > 16) {
+if (currentLine) lines.push(currentLine.trim());
+currentLine = word + ' ';
+} else {
+currentLine += word + ' ';
+}
+});
+if (currentLine) lines.push(currentLine.trim());
+return lines;
+}
+
+Chart.defaults.font.family = '"Noto Sans Lao", sans-serif';
+Chart.defaults.color = '#64748B';
+
+const overviewCtx = document.getElementById('overviewChart').getContext('2d');
+new Chart(overviewCtx, {
+type: 'doughnut',
+data: {
+labels: ['ຄວາມຄາດຫວັງ (🟢)', 'ຄວາມກັງວົນ (🟡)'],
+datasets: [{
+data: [37, 40],
+backgroundColor: ['#10B981', '#F59E0B'],
+borderWidth: 0,
+hoverOffset: 4
+}]
+},
+options: {
+maintainAspectRatio: false,
+plugins: {
+...tooltipConfig,
+legend: {
+position: 'bottom',
+labels: { font: { size: 14, weight: '500' }, padding: 20 }
+}
+},
+cutout: '70%'
+}
+});
+
+const expLabelsRaw = [
+'ໝວດການນຳໄປໃຊ້ໃນວຽກງານຕົວຈິງ',
+'ໝວດຄວາມສະດວກ ວ່ອງໄວ ແລະ ປະຢັດເວລາ',
+'ໝວດການຮຽນຮູ້ໂປຣແກຣມ ແລະ ເຕັກນິກໃໝ່ໆ',
+'ໝວດລະບົບຂໍ້ມູນ ແລະ Dashboard',
+'ໝວດວິທີການສອນ'
+];
+const expLabelsWrapped = expLabelsRaw.map(wrapLabel);
+const expData = [13, 9, 10, 4, 1];
+
+const expCtx = document.getElementById('expectationsChart').getContext('2d');
+new Chart(expCtx, {
+type: 'bar',
+data: {
+labels: expLabelsWrapped,
+datasets: [{
+label: 'ຈຳນວນຄຳຄິດເຫັນ',
+data: expData,
+backgroundColor: 'rgba(16, 185, 129, 0.8)',
+borderColor: '#10B981',
+borderWidth: 1,
+borderRadius: 4
+}]
+},
+options: {
+maintainAspectRatio: false,
+plugins: {
+...tooltipConfig,
+legend: { display: false }
+},
+scales: {
+y: {
+beginAtZero: true,
+ticks: { stepSize: 2 },
+grid: { color: 'rgba(226, 232, 240, 0.5)' }
+},
+x: {
+grid: { display: false },
+ticks: { font: { size: 12 } }
+}
+}
+}
+});
+
+const conLabelsRaw = [
+'ຄວາມເຂົ້າໃຈ ແລະ ພື້ນຖານຄວາມຮູ້',
+'ການນຳໄປໃຊ້ ແລະ ຄວາມສອດຄ່ອງກັບວຽກ',
+'ອຸປະກອນ ອິນເຕີເນັດ ແລະ ພາສາ',
+'ເວລາ ແລະ ການຈັດສັນວຽກ',
+'ອື່ນໆ'
+];
+const conLabelsWrapped = conLabelsRaw.map(wrapLabel);
+const conData = [13, 11, 8, 7, 1];
+
+const conCtx = document.getElementById('concernsChart').getContext('2d');
+new Chart(conCtx, {
+type: 'bar',
+data: {
+labels: conLabelsWrapped,
+datasets: [{
+label: 'ຈຳນວນຄຳຄິດເຫັນ',
+data: conData,
+backgroundColor: 'rgba(245, 158, 11, 0.8)',
+borderColor: '#F59E0B',
+borderWidth: 1,
+borderRadius: 4
+}]
+},
+options: {
+indexAxis: 'y',
+maintainAspectRatio: false,
+plugins: {
+...tooltipConfig,
+legend: { display: false }
+},
+scales: {
+x: {
+beginAtZero: true,
+ticks: { stepSize: 2 },
+grid: { color: 'rgba(226, 232, 240, 0.5)' }
+},
+y: {
+grid: { display: false },
+ticks: { font: { size: 12 } }
+}
+}
+}
+});
+</script>
+</body>
+</html>
