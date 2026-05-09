@@ -60,14 +60,6 @@ max-height: 350px;
 
 <!-- Palette Used: Vibrant Growth & Caution (Emerald & Amber) -->
 <!-- NO SVG OR MERMAID JS WERE USED IN THIS OUTPUT -->
-<!-- PLAN SUMMARY: 
-Section 1: Overview - Compares total Expectations vs Concerns using a Donut Chart. 
-Section 2: Expectations Deep Dive - Analyzes specific expectation categories using a Bar Chart. 
-Section 3: Concerns Deep Dive - Analyzes specific concern categories using a Horizontal Bar Chart.
-VISUALIZATION CHOICES:
-1. Total Comparison -> Compare -> Donut Chart -> Simple proportion, clear contrast. (Chart.js, NO SVG)
-2. Expectation Categories -> Compare -> Bar Chart -> Compare multiple categorical values effectively. (Chart.js, NO SVG)
-3. Concern Categories -> Compare -> Horizontal Bar Chart -> Compare categorical values with longer Lao text labels. (Chart.js, NO SVG) -->
 
 <div class="max-w-7xl mx-auto space-y-8">
 
@@ -143,20 +135,50 @@ VISUALIZATION CHOICES:
 </div>
 
 <div class="bg-surface rounded-2xl shadow-sm p-6 md:p-8 border border-slate-100">
-<div class="mb-6">
+<div class="mb-6 flex flex-col md:flex-row md:items-start justify-between gap-4">
+<div>
 <h2 class="text-2xl font-bold text-textMain border-b-2 border-slate-300 pb-2 inline-block">📎 ເອກະສານຊ້ອນທ້າຍ: ຮູບພາບການສະແດງຄວາມຄິດເຫັນ</h2>
-<p class="text-textMuted mt-3">ພາບຕົ້ນສະບັບການຕິດສະຕິກເກີສະແດງຄວາມຄິດເຫັນຂອງຜູ້ເຂົ້າຮ່ວມ (ຄວາມຄາດຫວັງ ແລະ ຄວາມກັງວົນ).</p>
+<p class="text-textMuted mt-3">ພາບຕົ້ນສະບັບການຕິດສະຕິກເກີສະແດງຄວາມຄິດເຫັນຂອງຜູ້ເຂົ້າຮ່ວມ.</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 flex items-center justify-center relative min-h-[300px]">
-<img src="expect.jpeg" alt="ຮູບພາບສະຕິກເກີຄວາມຄາດຫວັງ (ສີຂຽວ)" class="w-full h-auto max-h-[600px] object-contain hover:scale-105 transition-transform duration-300">
-<p class="absolute inset-0 flex items-center justify-center text-slate-400 text-sm -z-10">ກຳລັງໂຫຼດຮູບ...</p>
+<!-- ປຸ່ມອັບໂຫຼດຮູບພາບ -->
+<div class="flex flex-col gap-3 min-w-[250px]">
+<label class="cursor-pointer bg-emerald-50 text-emerald-700 px-4 py-2.5 rounded-lg border border-emerald-200 hover:bg-emerald-100 hover:shadow-sm transition text-sm font-medium flex items-center justify-center gap-2">
+<span>📷 ນຳເຂົ້າຮູບຄວາມຄາດຫວັງ</span>
+<input type="file" id="uploadExpect" accept="image/*" class="hidden">
+</label>
+<label class="cursor-pointer bg-amber-50 text-amber-700 px-4 py-2.5 rounded-lg border border-amber-200 hover:bg-amber-100 hover:shadow-sm transition text-sm font-medium flex items-center justify-center gap-2">
+<span>📷 ນຳເຂົ້າຮູບຄວາມກັງວົນ</span>
+<input type="file" id="uploadConcern" accept="image/*" class="hidden">
+</label>
 </div>
-<div class="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 flex items-center justify-center relative min-h-[300px]">
-<img src="concern.jpeg" alt="ຮູບພາບສະຕິກເກີຄວາມກັງວົນ (ສີເຫຼືອງ)" class="w-full h-auto max-h-[600px] object-contain hover:scale-105 transition-transform duration-300">
-<p class="absolute inset-0 flex items-center justify-center text-slate-400 text-sm -z-10">ກຳລັງໂຫຼດຮູບ...</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+<div class="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 flex flex-col items-center justify-center relative min-h-[300px] p-2">
+<img id="expectImage" src="expect.jpeg" onerror="this.onerror=null; this.src='expect.jpg';" alt="ຮູບພາບສະຕິກເກີຄວາມຄາດຫວັງ" class="w-full h-auto max-h-[600px] object-contain hover:scale-105 transition-transform duration-300 z-10">
+<p class="absolute inset-0 flex items-center justify-center text-slate-400 text-sm z-0">ກຳລັງໂຫຼດຮູບ ຫຼື ຍັງບໍ່ມີຮູບພາບ...</p>
+</div>
+<div class="rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-slate-50 flex flex-col items-center justify-center relative min-h-[300px] p-2">
+<img id="concernImage" src="concern.jpeg" onerror="this.onerror=null; this.src='concern.jpg';" alt="ຮູບພາບສະຕິກເກີຄວາມກັງວົນ" class="w-full h-auto max-h-[600px] object-contain hover:scale-105 transition-transform duration-300 z-10">
+<p class="absolute inset-0 flex items-center justify-center text-slate-400 text-sm z-0">ກຳລັງໂຫຼດຮູບ ຫຼື ຍັງບໍ່ມີຮູບພາບ...</p>
 </div>
 </div>
+
+<!-- ກ່ອງຄຳແນະນຳສຳລັບອັບເດດຂໍ້ມູນ (Prompt Box) -->
+<div class="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-6">
+<h3 class="text-lg font-bold text-blue-800 mb-2">🤖 ວິທີອັບເດດກຣາບດ້ວຍຂໍ້ມູນໃໝ່ (ໃຊ້ AI)</h3>
+<p class="text-sm text-blue-700 mb-4">
+ເນື່ອງຈາກໜ້າເວັບນີ້ເປັນແບບ Static, ເພື່ອອັບເດດຕົວເລກໃນກຣາບ ທ່ານສາມາດອັບໂຫຼດຮູບຂ້າງເທິງໄວ້ເບິ່ງເປັນຕົວຢ່າງ ແລ້ວກັອບປີ້ຄຳສັ່ງດ້ານລຸ່ມນີ້ ໄປວາງໃນຊ່ອງແຊັດຂອງ <strong>Gemini (AI)</strong> ພ້ອມແນບຮູບພາບໃໝ່ລົງໄປ ເພື່ອໃຫ້ AI ຂຽນໂຄດ HTML ໂຕໃໝ່ໃຫ້ອັດຕະໂນມັດ:
+</p>
+<div class="flex flex-col sm:flex-row items-center gap-3">
+<input type="text" id="aiPromptText" readonly value="ຊ່ວຍວິເຄາະຮູບໃໝ່ນີ້ ແລ້ວອັບເດດໂຄດ HTML ໜ້າເວັບ Dashboard ໃຫ້ແດ່" class="flex-1 bg-white border border-blue-300 text-slate-700 text-sm rounded-lg block w-full p-2.5 outline-none focus:ring-2 focus:ring-blue-500 cursor-text">
+<button onclick="copyPrompt()" class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center transition flex-shrink-0">
+📋 ກັອບປີ້ຄຳສັ່ງ
+</button>
+</div>
+<p id="copySuccessMsg" class="text-sm text-emerald-600 mt-2 font-medium hidden">✅ ກັອບປີ້ຄຳສັ່ງສຳເລັດແລ້ວ! ນຳໄປວາງໃນຊ່ອງແຊັດ AI ໄດ້ເລີຍ.</p>
+</div>
+
 </div>
 
 <footer class="text-center text-textMuted text-sm py-6">
@@ -166,6 +188,45 @@ VISUALIZATION CHOICES:
 </div>
 
 <script>
+// ຟັງຊັນສຳລັບກັອບປີ້ຄຳສັ່ງ (Copy Prompt)
+function copyPrompt() {
+const copyText = document.getElementById("aiPromptText");
+copyText.select();
+copyText.setSelectionRange(0, 99999); /* ສຳລັບມືຖື */
+document.execCommand("copy"); // ໃຊ້ execCommand ເພື່ອໃຫ້ຮອງຮັບກັບ iframe
+
+const msg = document.getElementById("copySuccessMsg");
+msg.classList.remove("hidden");
+setTimeout(() => {
+msg.classList.add("hidden");
+}, 3000); // ເຊື່ອງຂໍ້ຄວາມຫຼັງຈາກ 3 ວິນາທີ
+}
+
+// ຟັງຊັນສຳລັບຈັດການອັບໂຫຼດຮູບພາບ
+function setupImageUpload(inputId, imageId) {
+const fileInput = document.getElementById(inputId);
+const imgElement = document.getElementById(imageId);
+
+fileInput.addEventListener('change', function(event) {
+const file = event.target.files[0];
+if (file) {
+const reader = new FileReader();
+reader.onload = function(e) {
+// ປ່ຽນແຫຼ່ງທີ່ມາຂອງຮູບໃຫ້ເປັນໄຟລ໌ທີ່ອັບໂຫຼດເຂົ້າໄປ
+imgElement.src = e.target.result;
+// ລຶບຄຳສັ່ງ onerror ອອກ ເພື່ອປ້ອງກັນບໍ່ໃຫ້ມັນໂຫຼດກັບໄປຫາໄຟລ໌ເດີມ
+imgElement.onerror = null; 
+}
+reader.readAsDataURL(file);
+}
+});
+}
+
+// ເອີ້ນໃຊ້ຟັງຊັນສຳລັບທັງ 2 ປຸ່ມ
+setupImageUpload('uploadExpect', 'expectImage');
+setupImageUpload('uploadConcern', 'concernImage');
+
+
 const tooltipConfig = {
 tooltip: {
 callbacks: {
